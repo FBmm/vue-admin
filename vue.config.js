@@ -27,12 +27,12 @@ module.exports = {
   publicPath: '/',
   outputDir: 'dist',
   assetsDir: 'static',
-  lintOnSave: process.env.NODE_ENV === 'development',
+  // lintOnSave: process.env.NODE_ENV === 'development', //  lint 编译警告
   productionSourceMap: true,
   devServer: {
     host: 'localhost',
     port: port,
-    open: true,
+    open: false, // 浏览器自动打开
     overlay: {
       warnings: false,
       errors: true
