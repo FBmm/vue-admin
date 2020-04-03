@@ -92,6 +92,12 @@ export const constantRoutes = [
         name: 'Slot',
         component: () => import('@/views/vue/slot/index'),
         meta: { title: 'Slot', icon: 'slot' }
+      },
+      {
+        path: 'sync-modifier',
+        name: 'SyncModifier',
+        component: () => import('@/views/vue/sync-modifier/index'),
+        meta: { title: 'SyncModifier', icon: 'syncModifier' }
       }
     ]
   },

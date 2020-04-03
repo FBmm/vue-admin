@@ -17,6 +17,11 @@ const menuConfig = [{
       title: '插槽',
       route: '/vue/slot',
       icon: '',
+    }, {
+      name: 'sync-modifier',
+      title: '.sync修饰符',
+      route: '/vue/sync-modifier',
+      icon: '',
     }]
   },
 
