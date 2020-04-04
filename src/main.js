@@ -33,6 +33,15 @@ Vue.use(ElementUI, { locale })
 // 如果想要中文版 element-ui，按如下方式声明
 // Vue.use(ElementUI)
 
+// 全局指令 表单输入元素自动获取焦点
+Vue.directive('focus', {
+  // 当被绑定的元素插入到 DOM 中时……
+  inserted: function(el) {
+    // 聚焦元素
+    el.focus()
+  }
+})
+
 Vue.config.productionTip = false
 
 new Vue({
