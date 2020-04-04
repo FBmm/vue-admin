@@ -98,6 +98,12 @@ export const constantRoutes = [
         name: 'SyncModifier',
         component: () => import('@/views/vue/sync-modifier/index'),
         meta: { title: 'SyncModifier', icon: 'syncModifier' }
+      },
+      {
+        path: 'directive',
+        name: 'Directive',
+        component: () => import('@/views/vue/directive/index'),
+        meta: { title: 'Directive', icon: 'directive' }
       }
     ]
   },

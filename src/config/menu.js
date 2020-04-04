@@ -22,6 +22,11 @@ const menuConfig = [{
       title: '.sync修饰符',
       route: '/vue/sync-modifier',
       icon: '',
+    }, {
+      name: 'directive',
+      title: '指令',
+      route: '/vue/directive',
+      icon: '',
     }]
   },
 
