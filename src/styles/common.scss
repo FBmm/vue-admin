@@ -1,0 +1,15 @@
+// main-container global css
+.app-container, .vue-container {
+  padding: 20px;
+}
+
+// h1 ~ h3
+h1, h2, h3 {
+  margin-top: 0;
+}
+
+.vue-container {
+  .el-row {
+    margin-bottom: 20px;
+  }
+}
