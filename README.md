@@ -11,10 +11,11 @@ cd vue-example/vue-admin-template
 npm install
 
 # develop
-npm run dev
+npm run mock # 启动 mock 服务器
+npm start # 开发环境启动项目
 ```
 
-This will automatically open http://localhost:9528
+This will automatically open http://localhost:4000
 
 ## Build
 
