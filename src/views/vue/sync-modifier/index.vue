@@ -2,7 +2,8 @@
   <div class="app-container">
     <h3>1. prop属性双向绑定</h3>
     <div>输入值1：{{demo1}}</div>
-    <div>input: <input type="text" v-model="demo1"></div>
+    <div>input: <input type="text" v-model="demo1" v-focus></div>
+    <div>v-focus测试: <input type="text" v-focus>（如果存在两个 v-focus，第二个会覆盖第一个）</div>
     <div>组件：<MyInput :value="demo1" @input="onChange"></MyInput></div>
     <h3>2. .sync修饰符</h3>
     <div>输入值2：{{demo2}}</div>
