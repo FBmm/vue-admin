@@ -1,11 +1,11 @@
-# vue-admin-demo
+# vue-admin
 
 ```bash
 # clone the project
-git clone git@github.com:FBmm/vue-example.git
+git clone git@github.com:FBmm/vue-admin.git
 
 # enter the project directory
-cd vue-example/vue-admin-template
+cd vue-admin
 
 # install dependency
 npm install
