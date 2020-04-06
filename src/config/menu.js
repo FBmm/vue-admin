@@ -27,6 +27,11 @@ const menuConfig = [{
       title: '指令',
       route: '/vue/directive',
       icon: '',
+    }, {
+      name: 'plugin',
+      title: '插件',
+      route: '/vue/plugin',
+      icon: '',
     }]
   },
 

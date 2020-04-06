@@ -104,6 +104,12 @@ export const constantRoutes = [
         name: 'Directive',
         component: () => import('@/views/vue/directive/index'),
         meta: { title: 'Directive', icon: 'directive' }
+      },
+      {
+        path: 'plugin',
+        name: 'Plugin',
+        component: () => import('@/views/vue/plugin/index'),
+        meta: { title: 'Plugin', icon: 'plugin' }
       }
     ]
   },
