@@ -5,7 +5,7 @@
       <el-radio-button :label="true">收起</el-radio-button>
     </el-radio-group> -->
     <el-menu
-      default-active="1-4-1"
+      :default-active="leftMenus[0].name"
       class="el-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose"
@@ -14,15 +14,11 @@
       :text-color="variables.menuText"
       :active-text-color="variables.menuActiveText"
     >
-      <el-submenu v-for="item in leftMenus" :key="item.name">
-        <template slot="title">
-            <i :class="item.icon"></i>
-            <span slot="title">{{item.title}}</span>
-        </template>
-        <el-menu-item v-for="subItem in item.children" :key="subItem.name">
-          <span slot="title">{{subItem.title}}</span>
-        </el-menu-item>
-      </el-submenu>
+      <el-menu-item v-for="item in leftMenus" :key="item.name" :index="item.name">
+          <template v-slot:title>
+            <router-link :to="item.route">{{item.title}}</router-link>
+          </template>
+      </el-menu-item>
     </el-menu>
   </div>
 </template>
@@ -49,9 +45,10 @@ export default {
     },
     // 当前主导航对应的左树菜单
     leftMenus() {
-      return menus.filter((item) => {
+      const leftMenus = menus.filter((item) => {
         return this.$route.path.includes(item.name);
       });
+      return leftMenus[0].children;
     }
   },
   methods: {
