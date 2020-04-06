@@ -37,7 +37,30 @@ export default (Vue)=>{
   // 动态指令测试
   Vue.directive('dynamic-directive', {
     bind: (el, binding, vnode) => {
-      el.innerHTML = JSON.stringify(binding.value)
+      el.innerHTML = '用指令修改innerHTML，值是：' + JSON.stringify(binding.value)
     },
   })
+
+  // 固定元素
+  Vue.directive('pin', {
+    bind: function (el, binding, vnode) {
+      el.style.position = 'fixed'
+      el.style.top = binding.value + 'px'
+    }
+  })
+
+  // 固定元素-带方向扩展
+  // Vue.directive('arg-pin', {
+  //   bind: function (el, binding, vnode) {
+  //     el.style.position = 'fixed'
+  //     var s = (binding.arg == 'left' ? 'left' : 'top')
+  //     el.style[s] = binding.value + 'px'
+  //   }
+  // })
+  // 函数简写
+   Vue.directive('arg-pin', (el, binding) => {
+      el.style.position = 'fixed'
+      var s = (binding.arg == 'left' ? 'left' : 'top')
+      el.style[s] = binding.value + 'px'
+   })
 }
