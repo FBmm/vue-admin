@@ -15,7 +15,7 @@ import router from './router'
 import '@/icons' // icon
 import '@/permission' // permission control
 
-import globalDirective from '@/core/directive'
+import directiveInstall from '@/core/directive'
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api
@@ -37,7 +37,7 @@ Vue.use(ElementUI, {
 // Vue.use(ElementUI)
 
 // 全局指令
-globalDirective(Vue)
+Vue.use(directiveInstall)
 
 Vue.config.productionTip = false
 

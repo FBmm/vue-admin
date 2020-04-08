@@ -1,4 +1,4 @@
-export default (Vue)=>{
+export default (Vue, options) => {
   // 全局指令 表单输入元素自动获取焦点
   Vue.directive('focus', {
     // 当被绑定的元素插入到 DOM 中时……
