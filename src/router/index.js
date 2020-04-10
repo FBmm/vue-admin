@@ -115,6 +115,26 @@ export const constantRoutes = [
   },
 
   {
+    path: '/component',
+    component: Layout,
+    redirect: '',
+    children: [
+      {
+        path: 'twoColsLayout-calc',
+        name: 'TwoColsLayoutCalc',
+        component: () => import('@/views/componentDemo/twoColsLayout/calc'),
+        meta: { title: 'TwoColsLayoutCalc', icon: '' }
+      },
+      {
+        path: 'twoColsLayout-flex',
+        name: 'TwoColsLayoutFlex',
+        component: () => import('@/views/componentDemo/twoColsLayout/flex'),
+        meta: { title: 'TwoColsLayoutFlex', icon: '' }
+      },
+    ]
+  },
+
+  {
     path: '/example',
     component: Layout,
     redirect: '/example/table',
