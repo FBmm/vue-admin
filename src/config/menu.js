@@ -36,6 +36,25 @@ const menuConfig = [{
   },
 
   {
+    name: 'component',
+    title: '组件示例',
+    route: '/component',
+    icon: 'el-icon-location',
+    hidden: false,
+    children: [{
+      name: 'twoColsLayout',
+      title: '两栏布局 - calc 版',
+      route: '/component/twoColsLayout-calc',
+      icon: '',
+    }, {
+      name: 'twoColsLayout',
+      title: '两栏布局 - flex 版',
+      route: '/component/twoColsLayout-flex',
+      icon: '',
+    }]
+  },
+
+  {
     name: 'provision',
     title: '资源分配',
     route: '/provision',
