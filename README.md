@@ -1,5 +1,7 @@
 # vue-admin
 
+> 基于 vue 全集桶 + echarts (前端)、express (mock服务器) ，使用 vue-element-admin(vue-admin-template) 模板搭建的企业级后台管理系统 demo，项目模块由vue学习、自研发组件、企业开发场景组件等示例组成。
+
 ```bash
 # clone the project
 git clone git@github.com:FBmm/vue-admin.git
