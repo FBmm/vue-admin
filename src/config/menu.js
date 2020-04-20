@@ -36,6 +36,20 @@ const menuConfig = [{
   },
 
   {
+    name: 'vue-source',
+    title: 'vue源码学习',
+    route: '/vue-source',
+    icon: 'el-icon-location',
+    hidden: false,
+    children: [{
+      name: 'reactive',
+      title: '响应式原理',
+      route: '/vue-source/reactive',
+      icon: '',
+    }]
+  },
+
+  {
     name: 'component',
     title: '组件示例',
     route: '/component',
@@ -54,55 +68,55 @@ const menuConfig = [{
     }]
   },
 
-  {
-    name: 'provision',
-    title: '资源分配',
-    route: '/provision',
-    icon: 'el-icon-location',
-    hidden: false,
-    children: [{
-      name: 'host',
-      title: '主机',
-      route: '/provision/host',
-      icon: '',
-      disabled: true
-    }, {
-      name: 'volume',
-      title: '卷',
-      route: '/provision/volume',
-      icon: '',
-      hidden: false
-    }]
-  },
+  // {
+  //   name: 'provision',
+  //   title: '资源分配',
+  //   route: '/provision',
+  //   icon: 'el-icon-location',
+  //   hidden: false,
+  //   children: [{
+  //     name: 'host',
+  //     title: '主机',
+  //     route: '/provision/host',
+  //     icon: '',
+  //     disabled: true
+  //   }, {
+  //     name: 'volume',
+  //     title: '卷',
+  //     route: '/provision/volume',
+  //     icon: '',
+  //     hidden: false
+  //   }]
+  // },
 
-  {
-    name: 'protected',
-    title: '数据保护',
-    route: '/protected',
-    icon: 'el-icon-location',
-    children: [{
-      name: 'replication-pair',
-      title: '远程复制 Pair',
-      route: '/protected/replication-pair',
-      icon: '',
-    }, {
-      name: 'consistent-group',
-      title: '远程复制一致性组',
-      route: '/provision/consistent-group',
-      icon: '',
-    }, {
-      name: 'duplication-pair',
-      title: '双活 Pair',
-      route: '/provision/duplication-pair',
-      icon: '',
-    }, {
-      name: 'duplication-group',
-      title: '双活一致性组',
-      route: '/provision/duplication-group',
-      icon: '',
-      hidden: true
-    }]
-  },
+  // {
+  //   name: 'protected',
+  //   title: '数据保护',
+  //   route: '/protected',
+  //   icon: 'el-icon-location',
+  //   children: [{
+  //     name: 'replication-pair',
+  //     title: '远程复制 Pair',
+  //     route: '/protected/replication-pair',
+  //     icon: '',
+  //   }, {
+  //     name: 'consistent-group',
+  //     title: '远程复制一致性组',
+  //     route: '/provision/consistent-group',
+  //     icon: '',
+  //   }, {
+  //     name: 'duplication-pair',
+  //     title: '双活 Pair',
+  //     route: '/provision/duplication-pair',
+  //     icon: '',
+  //   }, {
+  //     name: 'duplication-group',
+  //     title: '双活一致性组',
+  //     route: '/provision/duplication-group',
+  //     icon: '',
+  //     hidden: true
+  //   }]
+  // },
 
   {
     name: 'setting',

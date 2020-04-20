@@ -115,6 +115,20 @@ export const constantRoutes = [
   },
 
   {
+    path: '/vue-source',
+    component: Layout,
+    redirect: '/vue-source/reactive',
+    children: [
+      {
+        path: 'reactive',
+        name: 'Reactive',
+        component: () => import('@/views/vue-source/reactive/index'),
+        meta: { title: 'Reactive', }
+      },
+    ]
+  },
+
+  {
     path: '/component',
     component: Layout,
     redirect: '',
