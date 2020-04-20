@@ -149,6 +149,20 @@ export const constantRoutes = [
   },
 
   {
+    path: '/interview',
+    component: Layout,
+    redirect: '',
+    children: [
+      {
+        path: 'js',
+        name: 'Js',
+        component: () => import('@/views/interview/js'),
+        meta: { title: 'Js', icon: '' }
+      },
+    ]
+  },
+
+  {
     path: '/example',
     component: Layout,
     redirect: '/example/table',

@@ -68,6 +68,20 @@ const menuConfig = [{
     }]
   },
 
+  {
+    name: 'interview',
+    title: '面试题',
+    route: '/interview',
+    icon: 'el-icon-location',
+    hidden: false,
+    children: [{
+      name: 'js',
+      title: 'js面试题',
+      route: '/interview/js',
+      icon: '',
+    }]
+  },
+
   // {
   //   name: 'provision',
   //   title: '资源分配',
