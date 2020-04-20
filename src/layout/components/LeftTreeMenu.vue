@@ -40,13 +40,12 @@ export default {
   },
   computed: {
     variables() {
-      
       return variables;
     },
     // 当前主导航对应的左树菜单
     leftMenus() {
       const leftMenus = menus.filter((item) => {
-        return this.$route.path.includes(item.name);
+        return new RegExp(`\/${item.name}\/`).test(this.$route.path);
       });
       return leftMenus[0].children;
     }
