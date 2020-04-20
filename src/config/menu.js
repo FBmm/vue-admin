@@ -56,7 +56,7 @@ const menuConfig = [{
     icon: 'el-icon-location',
     hidden: false,
     children: [{
-      name: 'twoColsLayout',
+      name: 'twoColsLayoutCalc',
       title: '两栏布局 - calc 版',
       route: '/component/twoColsLayout-calc',
       icon: '',

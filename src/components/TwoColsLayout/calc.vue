@@ -22,7 +22,7 @@
 *   2. 左边定宽、右边自适应布局
 */
 export default {
-  name: 'TwoColsLayout',
+  name: 'TwoColsLayoutCalc',
   data() {
     return {
       colLeftExpanded: true,
