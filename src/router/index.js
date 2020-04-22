@@ -149,6 +149,20 @@ export const constantRoutes = [
   },
 
   {
+    path: '/js-api',
+    component: Layout,
+    redirect: '',
+    children: [
+      {
+        path: 'async',
+        name: 'Async',
+        component: () => import('@/views/js-api/async/index'),
+        meta: { title: 'Async', icon: '' }
+      },
+    ]
+  },
+
+  {
     path: '/interview',
     component: Layout,
     redirect: '',

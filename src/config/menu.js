@@ -50,6 +50,20 @@ const menuConfig = [{
   },
 
   {
+    name: 'js-api',
+    title: 'js api学习',
+    route: '/js-api',
+    icon: 'el-icon-location',
+    hidden: false,
+    children: [{
+      name: 'async',
+      title: 'async await promise',
+      route: '/js-api/async',
+      icon: '',
+    }]
+  },
+
+  {
     name: 'component',
     title: '组件示例',
     route: '/component',
