@@ -1,6 +1,7 @@
 <template>
   <div class="app-container">
     async
+    <div ref="img"></div>
   </div>
 </template>
 
@@ -14,8 +15,14 @@ export default {
     // this.demo1()
     // this.demo2()
     // this.demo3()
-    this.demo4()
+    // this.demo4()
     // console.log(stream)
+    // 图片异步加载并渲染到dom
+    this.loadImgAsync('https://es6.ruanyifeng.com/images/cover-3rd.jpg').then( _ => {
+      this.$refs.img.appendChild(_)
+    })
+    this.demo5()
+    // this.demo6()
   },
   methods: {
     syncFn() {
@@ -84,6 +91,74 @@ export default {
          console.log('1s 后执行') 
       })
     },
+
+    /**
+     * @description 1. Promise 图片异步加载demo
+     *
+     */
+    loadImgAsync(url) {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => {
+          resolve(img)
+        }
+        img.onerror = () => {
+          reject(new Error(`Can not load img at ${url}`))
+        }
+        img.width = 200
+        img.src = url
+      })
+    },
+
+    /**
+     * @description 1. Promise 异步操作的结果是返回另一个异步操作
+     * p1的状态决定了p2的状态
+     */
+    demo5() {
+      const p1 = new Promise((resolve, reject) => {
+        reject(1)
+        console.log('2')
+      })
+      const p2 = new Promise((resolve, reject) => {
+        resolve(p1)
+        // reject(p1)
+      })
+      p2.then(_ => {
+        console.log(p1)
+        console.log(p2)
+        console.log(_)
+      }, _ => {
+        console.log(p1)
+        console.log(p2)
+        console.log(_)
+      })
+    },
+
+    /**
+     * @description 1. Promise 异步操作的结果是返回另一个异步操作 p1 延迟于 p2
+     *
+     */
+    demo6() {
+      const p1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          reject(new Error('fail'))
+        }, 3000)
+      })
+      const p2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve(p1)
+        }, 1000)
+      }).then(_ => {
+        console.log(p1)
+        console.log(p2)
+        console.log(_)
+      })
+      .catch(err => {
+        console.log(p1)
+        console.log(p2)
+        console.log(err)
+      })
+    }
   }
 }
 </script>
