@@ -18,14 +18,16 @@ export default {
     // this.demo4()
     // console.log(stream)
     // 图片异步加载并渲染到dom
-    this.loadImgAsync('https://es6.ruanyifeng.com/images/cover-3rd.jpg').then( _ => {
+    this.loadImgAsync('https://es6.ruanyifeng.com/images/cover-3rd.jpg').then(_ => {
       this.$refs.img.appendChild(_)
     })
     // this.demo5()
     // this.demo6()
     // this.demo7()
     // this.demo8()
-    this.demo9()
+    // this.demo9()
+    // this.demo10()
+    this.demo11()
   },
   methods: {
     syncFn() {
@@ -39,8 +41,8 @@ export default {
     },
 
     /**
-     * @description 1. 正常函数与async函数调用顺序
-     * @description 2. async 函数返回值
+     * @title 正常函数与async函数调用顺序
+     * @title async 函数返回值
      */
     async demo1() {
       const fn = this.asyncFn()
@@ -49,7 +51,7 @@ export default {
     },
 
     /**
-     * @description 1. 测试 async 函数中不含await是否可单独调用
+     * @title 测试 async 函数中不含await是否可单独调用
      *
      */
     async demo2() {
@@ -57,7 +59,7 @@ export default {
     },
 
     /**
-     * @description 1. 简单Promise
+     * @title 简单Promise
      *
      */
     demo3() {
@@ -80,7 +82,7 @@ export default {
     },
 
     /**
-     * @description 1. Promise 实现延迟执行
+     * @title Promise 实现延迟执行
      *
      */
     demo4() {
@@ -96,7 +98,7 @@ export default {
     },
 
     /**
-     * @description 1. Promise 图片异步加载demo
+     * @title Promise 图片异步加载demo
      *
      */
     loadImgAsync(url) {
@@ -114,7 +116,7 @@ export default {
     },
 
     /**
-     * @description 1. Promise 异步操作的结果是返回另一个异步操作
+     * @title Promise 异步操作的结果是返回另一个异步操作
      * p1的状态决定了p2的状态
      */
     demo5() {
@@ -138,7 +140,7 @@ export default {
     },
 
     /**
-     * @description 1. Promise 异步操作的结果是返回另一个异步操作 p1 延迟于 p2
+     * @title Promise 异步操作的结果是返回另一个异步操作 p1 延迟于 p2
      *
      */
     demo6() {
@@ -164,7 +166,7 @@ export default {
     },
 
     /**
-     * @description 1. Promise.all
+     * @title Promise.all
      *
      * 接收数组或者伪数组作为参数
      * 不是 Promise 实例，就会先调用Promise.resolve()方法，将参数转为 Promise 实例
@@ -211,7 +213,7 @@ export default {
     },
 
     /**
-     * @description 1. Promise.all
+     * @title Promise.all
      *
      * 如果作为参数的 Promise 实例，自己定义了catch方法，那么它一旦被rejected，并不会触发Promise.all()的catch方法
      *
@@ -240,7 +242,7 @@ export default {
     },
 
      /**
-     * @description 1. Promise.race
+     * @title Promise.race
      *
      * 只要p1、p2、p3之中有一个实例率先改变状态，p的状态就跟着改变。
      * 最先改变的 Promise 实例的返回值，就传递给p的回调函数。
@@ -267,6 +269,74 @@ export default {
       const p = Promise.race([p1, p2, p3])
       p.then(res => console.log(res))
       .catch(e => console.log(e))
+    },
+
+    /**
+     * @title Promise.any - 是一个第三阶段的提案
+     *
+     * 参数实例有一个变成fulfilled状态，包装实例就会变成fulfilled状态；
+     * 如果所有参数实例都变成rejected状态，包装实例就会变成rejected状态。
+     */
+    demo10() {
+      const p1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve(3000)
+        }, 3000)
+      })
+
+      const p2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve(1500)
+        }, 1500)
+      })
+
+      const p3 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve(1000)
+        }, 1000)
+      })
+
+      const p = Promise.any([p1, p2, p3])
+      p.then(res => console.log(res))
+      .catch(e => console.log(e))
+    },
+
+    /**
+     * @title Promise.resolve
+     *
+     * 现有对象转为 Promise 对象
+     * 1. 参数是 Promise 实例 - 不做任何转换
+     * 2. 参数是 thenable (有then方法的对象) - 转换成 Promise 对象并立即执行 then 方法
+     * 3. 参数不是具有then方法的对象，或根本就不是对象 - 返回新的 Promise 对象，状态为resolved
+     * 4. 不带有任何参数，直接返回一个resolved状态的 Promise 对象
+     */
+    demo11() {
+      const p1 = Promise.resolve(1)
+      console.log(p1)
+
+      // 1.
+      const p2 = Promise.resolve(p1)
+      console.log(p2)
+      console.log(p1 === p2)
+
+      // 2.
+      Promise.resolve({
+        then: () => {
+          console.log('thenable 对象')
+        }
+      })
+
+      // 3.
+      Promise.resolve({
+        b: 1,
+        a: () => {
+          console.log('thenable 对象')
+        }
+      })
+
+      // 4. 不带任何参数
+      const p3 = Promise.resolve();
+      console.log(p3)
     }
   }
 }
