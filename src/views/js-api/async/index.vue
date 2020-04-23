@@ -128,6 +128,7 @@ export default {
         resolve(p1)
         // reject(p1)
       })
+      console.log(p1 === p2)
       p2.then(_ => {
         console.log(p1)
         console.log(p2)
@@ -304,18 +305,19 @@ export default {
     /**
      * @title Promise.resolve
      *
-     * 现有对象转为 Promise 对象
+     * 现有对象转换为 Promise 对象
      * 1. 参数是 Promise 实例 - 不做任何转换
      * 2. 参数是 thenable (有then方法的对象) - 转换成 Promise 对象并立即执行 then 方法
      * 3. 参数不是具有then方法的对象，或根本就不是对象 - 返回新的 Promise 对象，状态为resolved
      * 4. 不带有任何参数，直接返回一个resolved状态的 Promise 对象
+     * 5. 立即resolve()的 Promise 对象，是在本轮“事件循环”（event loop）的结束时执行，而不是在下一轮“事件循环”的开始时
      */
     demo11() {
-      const p1 = Promise.resolve(1)
+      const p1 = Promise.reject(1)
       console.log(p1)
 
       // 1.
-      const p2 = Promise.resolve(p1)
+      const p2 = Promise.reject(p1)
       console.log(p2)
       console.log(p1 === p2)
 
