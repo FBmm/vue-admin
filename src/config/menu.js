@@ -57,8 +57,18 @@ const menuConfig = [{
     hidden: false,
     children: [{
       name: 'async',
-      title: 'async await promise',
+      title: 'async await',
       route: '/js-api/async',
+      icon: '',
+    }, {
+      name: 'promise',
+      title: 'promise',
+      route: '/js-api/promise',
+      icon: '',
+    }, {
+      name: 'generator',
+      title: 'generator',
+      route: '/js-api/generator',
       icon: '',
     }]
   },

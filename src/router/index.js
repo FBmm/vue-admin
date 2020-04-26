@@ -159,6 +159,18 @@ export const constantRoutes = [
         component: () => import('@/views/js-api/async/index'),
         meta: { title: 'Async', icon: '' }
       },
+      {
+        path: 'promise',
+        name: 'Promise',
+        component: () => import('@/views/js-api/promise/index'),
+        meta: { title: 'Promise', icon: '' }
+      },
+      {
+        path: 'generator',
+        name: 'Generator',
+        component: () => import('@/views/js-api/generator/index'),
+        meta: { title: 'Generator', icon: '' }
+      },
     ]
   },
 
