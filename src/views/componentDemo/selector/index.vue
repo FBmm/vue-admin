@@ -1,20 +1,16 @@
 <template>
-  <div class="two-cols-layout">
-    <div class="col__left" v-if="colLeftExpanded">
-      <slot name="left"></slot>
-    </div>
-    <div class="division_middle">
-      <div class="switch-btn" @click="toggleCol"></div>
-    </div>
-    <div class="col__right" :style="{'width': colRightWidth}">
-      <slot name="right"></slot>
-    </div>
+  <div>
+    <Selector></Selector>
   </div>
 </template>
 
 <script>
+import Selector from '@/components/Selector/v1.0'
 export default {
-  name: 'TwoColsLayout',
+  name: 'selectorC',
+  components: {
+    Selector,
+  },
   data() {
     return {
       colLeftExpanded: true,

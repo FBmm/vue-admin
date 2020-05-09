@@ -89,6 +89,11 @@ const menuConfig = [{
       title: '两栏布局 - flex 版',
       route: '/component/twoColsLayout-flex',
       icon: '',
+    }, {
+      name: 'selector',
+      title: '选择器',
+      route: '/component/selector',
+      icon: '',
     }]
   },
 

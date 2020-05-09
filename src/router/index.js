@@ -145,6 +145,12 @@ export const constantRoutes = [
         component: () => import('@/views/componentDemo/twoColsLayout/flex'),
         meta: { title: 'TwoColsLayoutFlex', icon: '' }
       },
+      {
+        path: 'selector',
+        name: 'Selector',
+        component: () => import('@/views/componentDemo/selector/index'),
+        meta: { title: 'Selector', icon: '' }
+      },
     ]
   },
 
