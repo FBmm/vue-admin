@@ -151,6 +151,12 @@ export const constantRoutes = [
         component: () => import('@/views/componentDemo/selector/index'),
         meta: { title: 'Selector', icon: '' }
       },
+      {
+        path: 'drag',
+        name: 'Drag',
+        component: () => import('@/views/componentDemo/drag-directive/index'),
+        meta: { title: 'Drag', icon: '' }
+      },
     ]
   },
 
