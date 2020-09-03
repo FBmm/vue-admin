@@ -1,5 +1,5 @@
 module.exports = function(router) {
-  router.get('/volume', (req, res) => {
+  router.get(global.APP_BASE_API + '/volume', (req, res) => {
     res.send('login success');
   })
 }

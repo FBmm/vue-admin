@@ -7,10 +7,8 @@ module.exports = function (router) {
       token: 'editor-token'
     }
   }
-  router.post('/user/login', (req, res) => {
+  router.post(global.APP_BASE_API + '/user/login', (req, res) => {
     const { username } = req.body
-    // console.log(req)
-    console.log(req.body)
     const token = tokens[username]
     res.send({
       code: 0,

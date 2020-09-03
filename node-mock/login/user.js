@@ -13,7 +13,7 @@ module.exports = function(router) {
       name: 'Normal Editor'
     }
   }
-  router.get('/user/info', (req, res) => {
+  router.get(global.APP_BASE_API + '/user/info', (req, res) => {
     const { token } = req.query
     const info = users[token]
     res.send({

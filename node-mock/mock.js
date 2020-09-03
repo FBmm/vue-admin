@@ -5,7 +5,6 @@ var router = express.Router();
 const app = express();
 const http = require('http');
 const port = 8010;
-
 router.all('*', function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'Content-Type');
@@ -13,7 +12,7 @@ router.all('*', function(req, res, next) {
   res.header('Content-Type', 'application/json;charset=utf-8');
   next();
 });
-
+global.APP_BASE_API = "/dev/v1";
 (function readFiles(dir) {
   const mockPath = path.resolve(__dirname, '../', dir);
   fs.readdirSync(mockPath)

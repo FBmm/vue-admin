@@ -22,7 +22,7 @@ const service = axios.create({
   //   return data;
   // }]
 })
-
+console.log(process.env.VUE_APP_BASE_API)
 // request interceptor
 service.interceptors.request.use(
   config => {
