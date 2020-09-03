@@ -16,6 +16,7 @@ import '@/icons' // icon
 import '@/permission' // permission control
 
 import directiveInstall from '@/core/directive'
+import DragDirective from 'wu-vue-drag-directive'
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api
@@ -38,6 +39,8 @@ Vue.use(ElementUI, {
 
 // 全局指令
 Vue.use(directiveInstall)
+
+Vue.use(DragDirective)
 
 Vue.config.productionTip = false
 

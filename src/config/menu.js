@@ -94,6 +94,11 @@ const menuConfig = [{
       title: '选择器',
       route: '/component/selector',
       icon: '',
+    }, {
+      name: 'drag',
+      title: '拖拽指令',
+      route: '/component/drag',
+      icon: '',
     }]
   },
 
